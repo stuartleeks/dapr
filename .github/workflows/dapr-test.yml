@@ -145,6 +145,7 @@ jobs:
       GOARCH: ${{ matrix.target_arch }}
       TARGET_OS: ${{ matrix.target_os }}
       TARGET_ARCH: ${{ matrix.target_arch }}
+      DAPR_E2E_TEST: "actor_features"
     strategy:
       fail-fast: false
       matrix:
@@ -306,7 +307,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target_os: [linux, windows]
+        target_os: [windows]
         target_arch: [amd64]
     steps:
       - name: Set up log paths
