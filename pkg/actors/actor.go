@@ -62,7 +62,7 @@ func newActor(actorType, actorID string, maxReentrancyDepth *int, cl clock.Clock
 		cl = &clock.RealClock{}
 	}
 	return &actor{
-		actorType:         actorType,
+		actorType:         actorType + "",
 		actorID:           actorID,
 		actorLock:         NewActorLock(int32(*maxReentrancyDepth)),
 		pendingActorCalls: &atomic.Int32{},
